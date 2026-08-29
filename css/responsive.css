@@ -6,6 +6,16 @@
 
 @media (max-width: 767px) {
 
+  /* Hide top bar on mobile as it takes up too much space and looks messy */
+  .top-bar {
+    display: none !important;
+  }
+
+  /* Reset navbar to top since top-bar is hidden */
+  .navbar {
+    top: 0 !important;
+  }
+
   /* Typography scale down */
   h1 { font-size: var(--text-2xl); }
   h2 { font-size: var(--text-xl); }
@@ -41,32 +51,60 @@
   }
 
   .hero-grid {
-    grid-template-columns: 1fr;
-    gap: var(--space-6);
+    display: block;
+    position: relative;
   }
 
-  /* Show compact hero visual side-by-side on mobile */
+  .hero-content {
+    padding-right: 0;
+  }
+  
+  .hero-content h1,
+  .hero-content .hero-description {
+    padding-right: 60px; /* Space for the animation only next to text */
+  }
+
+  /* Place animation perfectly on the right side of the text */
   .hero-visual {
-    padding-top: var(--space-4);
+    position: absolute;
+    top: var(--space-10); /* Align closer to the top of the text */
+    right: 0;
+    width: 50px;
+    height: 250px; /* Precise height to stop before buttons */
+    padding-top: 0;
   }
 
   .hero-visual-inner {
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: var(--space-3);
+    flex-direction: column;
+    width: 100%;
+    height: 100%; /* Fix: ensure height cascade for overflow hidden */
+    gap: 0;
+  }
+
+  .hero-visual-col {
+    width: 100%;
+    height: 100%;
   }
 
   .hero-icon-scroll-container {
-    height: 260px;
-    width: 60px;
+    height: 100%;
+    width: 50px;
     flex-shrink: 0;
   }
+  
+  .hero-icon-item {
+    padding: 6px;
+    border-radius: var(--radius-md);
+  }
 
-  .hero-workspace-img {
-    max-height: 260px;
-    width: 100%;
-    object-fit: contain;
+  .hero-icon-item img,
+  .hero-icon-item svg {
+    max-height: 26px; /* Restore correct sizing for mobile */
+  }
+
+  /* Hide the handshake image entirely on mobile */
+  .hero-visual-image-col {
+    display: none !important;
   }
 
   /* Brand card compact on mobile */
@@ -133,12 +171,14 @@
   .navbar-nav {
     display: none;
     position: fixed;
-    top: var(--navbar-height);
+    top: var(--navbar-height); /* Reset this so it's placed properly */
     left: 0;
     right: 0;
-    bottom: 0;
+    height: calc(100vh - var(--navbar-height)); /* Fix disappearing issue when scrolling! */
     flex-direction: column;
-    background-color: var(--color-white);
+    background-color: rgba(255, 255, 255, 0.95); /* Transparent & blurry */
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     padding: var(--space-6);
     gap: var(--space-1);
     overflow-y: auto;
@@ -163,7 +203,7 @@
 
   .navbar-link:hover,
   .navbar-link.active {
-    background-color: var(--color-primary-bg);
+    background-color: rgba(34, 109, 180, 0.1);
     color: var(--color-primary);
   }
 
@@ -178,15 +218,79 @@
     justify-content: center;
   }
 
+  .navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  /* Prevent the `<nav>` wrapper from breaking layout */
+  .navbar .container > nav {
+    position: absolute;
+  }
+
+  .mobile-home-btn {
+    display: none !important; /* Hide as requested */
+  }
+
   .navbar-toggle {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    order: 1; /* Hamburger on Left */
+    margin-left: 0;
+    margin-right: 12px; /* Add spacing between burger and actions */
+    padding-left: 0;
+  }
+
+  .mobile-nav-actions {
+    display: flex !important;
+    align-items: center;
+    gap: 8px;
+    order: 2; /* Beside the burger */
+    margin-right: auto; /* Push the logo to the far right */
+  }
+
+  .mobile-nav-phone {
+    font-size: 11px;
+    color: var(--color-heading);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .mobile-nav-phone i {
+    color: var(--color-primary);
+  }
+
+  .mobile-nav-cta {
+    font-size: 10px !important;
+    padding: 6px 10px !important;
+    height: 28px !important;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar-logo {
+    display: flex;
+    align-items: center;
+    order: 3; /* Logo on Right */
+    margin: 0;
+  }
+
+  .navbar-logo img {
+    height: 36px;
+    width: auto;
   }
 
   .navbar-logo-text {
     display: none;
   }
+
 
   /* Grids */
   .grid-2,

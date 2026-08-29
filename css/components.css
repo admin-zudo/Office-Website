@@ -226,6 +226,12 @@
   opacity: 1;
 }
 
+/* Mobile home button & mobile actions */
+.mobile-home-btn,
+.mobile-nav-actions {
+  display: none;
+}
+
 /* ── FOOTER ────────────────────────────────────────────────── */
 
 .footer {
