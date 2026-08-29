@@ -1,6 +1,2 @@
 # Cloudflare Pages — Redirects
-# Cloudflare Pages automatically serves /404.html for unmatched routes,
-# but this ensures the correct HTTP 404 status code is returned.
-
-# Serve 404 page with proper status
-/404    /404.html    404
+# Cloudflare Pages automatically serves /404.html for unmatched routes with a 404 status.
