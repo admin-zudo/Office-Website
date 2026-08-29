@@ -25,6 +25,15 @@
 
 /* ── Horizontal Roadmap / Process ──────────────────────────── */
 
+.roadmap-scroll-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.roadmap-scroll-indicator {
+  display: none;
+}
+
 .roadmap-wrapper {
   position: relative;
   margin-top: var(--space-8);

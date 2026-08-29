@@ -48,6 +48,10 @@
 
 /* ── NAVBAR ────────────────────────────────────────────────── */
 
+.mobile-quick-links {
+  display: none;
+}
+
 .navbar {
   position: fixed;
   top: 32px;

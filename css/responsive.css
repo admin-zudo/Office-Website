@@ -17,9 +17,17 @@
   }
 
   /* Typography scale down */
-  h1 { font-size: var(--text-2xl); }
-  h2 { font-size: var(--text-xl); }
-  h3 { font-size: var(--text-lg); }
+  h1 {
+    font-size: var(--text-2xl);
+  }
+
+  h2 {
+    font-size: var(--text-xl);
+  }
+
+  h3 {
+    font-size: var(--text-lg);
+  }
 
   .section {
     padding-top: var(--space-10);
@@ -38,7 +46,8 @@
 
   /* Hero */
   .hero {
-    min-height: auto;
+    min-height: 80vh;
+    padding-top: 34px;
     padding-bottom: var(--space-8);
   }
 
@@ -58,26 +67,30 @@
   .hero-content {
     padding-right: 0;
   }
-  
+
   .hero-content h1,
   .hero-content .hero-description {
-    padding-right: 60px; /* Space for the animation only next to text */
+    padding-right: 60px;
+    /* Space for the animation only next to text */
   }
 
   /* Place animation perfectly on the right side of the text */
   .hero-visual {
     position: absolute;
-    top: var(--space-10); /* Align closer to the top of the text */
+    top: var(--space-10);
+    /* Align closer to the top of the text */
     right: 0;
     width: 50px;
-    height: 250px; /* Precise height to stop before buttons */
+    height: 250px;
+    /* Precise height to stop before buttons */
     padding-top: 0;
   }
 
   .hero-visual-inner {
     flex-direction: column;
     width: 100%;
-    height: 100%; /* Fix: ensure height cascade for overflow hidden */
+    height: 100%;
+    /* Fix: ensure height cascade for overflow hidden */
     gap: 0;
   }
 
@@ -91,7 +104,7 @@
     width: 50px;
     flex-shrink: 0;
   }
-  
+
   .hero-icon-item {
     padding: 6px;
     border-radius: var(--radius-md);
@@ -99,7 +112,8 @@
 
   .hero-icon-item img,
   .hero-icon-item svg {
-    max-height: 26px; /* Restore correct sizing for mobile */
+    max-height: 26px;
+    /* Restore correct sizing for mobile */
   }
 
   /* Hide the handshake image entirely on mobile */
@@ -171,12 +185,15 @@
   .navbar-nav {
     display: none;
     position: fixed;
-    top: var(--navbar-height); /* Reset this so it's placed properly */
+    top: var(--navbar-height);
+    /* Reset this so it's placed properly */
     left: 0;
     right: 0;
-    height: calc(100vh - var(--navbar-height)); /* Fix disappearing issue when scrolling! */
+    height: calc(100vh - var(--navbar-height));
+    /* Fix disappearing issue when scrolling! */
     flex-direction: column;
-    background-color: rgba(255, 255, 255, 0.95); /* Transparent & blurry */
+    background-color: rgba(255, 255, 255, 0.95);
+    /* Transparent & blurry */
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     padding: var(--space-6);
@@ -226,21 +243,24 @@
   }
 
   /* Prevent the `<nav>` wrapper from breaking layout */
-  .navbar .container > nav {
+  .navbar .container>nav {
     position: absolute;
   }
 
   .mobile-home-btn {
-    display: none !important; /* Hide as requested */
+    display: none !important;
+    /* Hide as requested */
   }
 
   .navbar-toggle {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    order: 1; /* Hamburger on Left */
+    order: 1;
+    /* Hamburger on Left */
     margin-left: 0;
-    margin-right: 12px; /* Add spacing between burger and actions */
+    margin-right: 12px;
+    /* Add spacing between burger and actions */
     padding-left: 0;
   }
 
@@ -248,209 +268,291 @@
     display: flex !important;
     align-items: center;
     gap: 8px;
-    order: 2; /* Beside the burger */
-    margin-right: auto; /* Push the logo to the far right */
+    order: 2;
+    /* Beside the burger */
+    margin-right: auto;
+    /* Push the logo to the far right */
   }
 
-  .mobile-nav-phone {
-    font-size: 11px;
-    color: var(--color-heading);
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    text-decoration: none;
-    font-weight: 600;
-  }
-
-  .mobile-nav-phone i {
-    color: var(--color-primary);
-  }
-
-  .mobile-nav-cta {
-    font-size: 10px !important;
-    padding: 6px 10px !important;
-    height: 28px !important;
-    white-space: nowrap;
-    display: flex;
-    align-items: center;
-  }
-
-  .navbar-logo {
-    display: flex;
-    align-items: center;
-    order: 3; /* Logo on Right */
-    margin: 0;
-  }
-
-  .navbar-logo img {
-    height: 36px;
-    width: auto;
-  }
-
-  .navbar-logo-text {
+  /* Only display these quick links on the home page for mobile */
+  .mobile-quick-links {
     display: none;
   }
 
-
-  /* Grids */
-  .grid-2,
-  .grid-3,
-  .grid-4 {
-    grid-template-columns: 1fr;
+  .home-page .mobile-quick-links {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    order: 2;
+    margin-right: auto;
+    /* Push the logo to the far right */
+    margin-left: 0;
   }
 
-  .services-grid,
-  .solutions-grid,
-  .portfolio-grid,
-  .blog-grid,
-  .integration-categories {
-    grid-template-columns: 1fr;
+  .home-page .mobile-quick-links a {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--color-text-light);
+    text-decoration: none;
   }
 
-  .features-grid {
-    grid-template-columns: 1fr;
+  .home-page .mobile-quick-links a:hover {
+    color: var(--color-primary);
   }
 
-  .metrics-row {
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-4);
-  }
-
-  .two-col,
-  .zoho-highlight {
-    grid-template-columns: 1fr;
-    gap: var(--space-6);
-  }
-
-  .two-col--reverse {
-    direction: ltr;
-  }
-
-  .zoho-highlight-logos {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .product-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  /* Integration flow */
-  .integration-flow {
-    flex-direction: column;
-    gap: var(--space-3);
-    padding: var(--space-6) 0;
-  }
-
-  .integration-flow-step {
-    min-width: auto;
-    width: 100%;
-    padding: var(--space-4) var(--space-6);
-  }
-
-  .integration-flow-arrow {
-    transform: rotate(90deg);
-  }
-
-  /* Footer */
-  .footer-grid {
-    grid-template-columns: 1fr;
-    gap: var(--space-6);
-  }
-
-  .footer-brand {
-    max-width: 100%;
-  }
-
-  .footer-bottom {
-    flex-direction: column;
-    gap: var(--space-4);
-    text-align: center;
-  }
-
-  .footer-bottom-links {
-    justify-content: center;
-  }
-
-  /* Page hero */
-  .page-hero {
-    padding-top: calc(var(--navbar-height) + var(--space-8));
-    padding-bottom: var(--space-8);
-  }
-
-  /* Forms */
-  .form-row {
-    grid-template-columns: 1fr;
-  }
-
-  /* Process steps */
-  .process-steps {
-    grid-template-columns: 1fr;
-  }
-
-  /* Section header */
-  .section-header {
-    margin-bottom: var(--space-8);
-  }
-
-  /* Filter tabs */
-  .filter-tabs {
-    justify-content: flex-start;
-    overflow-x: auto;
-    flex-wrap: nowrap;
-    -webkit-overflow-scrolling: touch;
-    padding-bottom: var(--space-2);
-  }
-
-  .filter-tab {
-    flex-shrink: 0;
-  }
-
-  /* Logo carousel edge fade */
-  .logo-carousel::before,
-  .logo-carousel::after {
-    width: 40px;
-  }
-
-  /* Trust bar compact */
-  .trust-bar {
-    padding: var(--space-6) 0;
-  }
-
-  /* Timeline */
-  .timeline {
-    padding-left: var(--space-8);
-  }
-
-  /* Lead Magnet Banner Mobile */
-  .lead-magnet-banner {
-    padding: var(--space-5);
-    flex-direction: column;
-    align-items: flex-start;
-    gap: var(--space-5);
-    margin-bottom: var(--space-6);
-  }
-
-  /* Checklist Card Mobile */
-  .checklist-card {
-    padding: var(--space-5);
-  }
-
-  /* CTA banner tighter */
-  .cta-banner {
-    padding: var(--space-10) 0;
-  }
-
-  /* Scroll progress thinner on mobile */
-  .scroll-progress {
-    height: 2px;
-  }
+.mobile-nav-phone {
+  font-size: 11px;
+  color: var(--color-heading);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  text-decoration: none;
+  font-weight: 600;
 }
+
+.mobile-nav-phone i {
+  color: var(--color-primary);
+}
+
+.mobile-nav-cta {
+  font-size: 10px !important;
+  padding: 6px 10px !important;
+  height: 28px !important;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  order: 3;
+  /* Logo on Right */
+  margin: 0;
+}
+
+.navbar-logo img {
+  height: 36px;
+  width: auto;
+}
+
+.navbar-logo-text {
+  display: none;
+}
+
+
+/* Grids */
+.grid-2,
+.grid-3,
+.grid-4 {
+  grid-template-columns: 1fr;
+}
+
+.services-grid,
+.solutions-grid,
+.portfolio-grid,
+.blog-grid,
+.integration-categories {
+  grid-template-columns: 1fr;
+}
+
+.features-grid {
+  grid-template-columns: 1fr;
+}
+
+.metrics-row {
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+}
+
+.two-col,
+.zoho-highlight {
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+}
+
+.two-col--reverse {
+  direction: ltr;
+}
+
+.zoho-highlight-logos {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.product-grid {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* Integration flow */
+.integration-flow {
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-6) 0;
+}
+
+.integration-flow-step {
+  min-width: auto;
+  width: 100%;
+  padding: var(--space-4) var(--space-6);
+}
+
+.integration-flow-arrow {
+  transform: rotate(90deg);
+}
+
+/* Footer */
+.footer-grid {
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+}
+
+.footer-brand {
+  max-width: 100%;
+}
+
+.footer-bottom {
+  flex-direction: column;
+  gap: var(--space-4);
+  text-align: center;
+}
+
+.footer-bottom-links {
+  justify-content: center;
+}
+
+/* Page hero */
+.page-hero {
+  padding-top: calc(var(--navbar-height) + var(--space-8));
+  padding-bottom: var(--space-8);
+}
+
+/* Forms */
+.form-row {
+  grid-template-columns: 1fr;
+}
+
+/* Process steps */
+.process-steps {
+  grid-template-columns: 1fr;
+}
+
+/* Section header */
+.section-header {
+  margin-bottom: var(--space-8);
+}
+
+/* Filter tabs */
+.filter-tabs {
+  justify-content: flex-start;
+  overflow-x: auto;
+  flex-wrap: nowrap;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: var(--space-2);
+}
+
+.filter-tab {
+  flex-shrink: 0;
+}
+
+/* Logo carousel edge fade */
+.logo-carousel::before,
+.logo-carousel::after {
+  width: 40px;
+}
+
+/* Trust bar compact */
+.trust-bar {
+  padding: var(--space-6) 0;
+}
+
+/* Timeline */
+.timeline {
+  padding-left: var(--space-8);
+}
+
+/* Lead Magnet Banner Mobile */
+.lead-magnet-banner {
+  padding: var(--space-5);
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-5);
+  margin-bottom: var(--space-6);
+}
+
+/* Checklist Card Mobile */
+.checklist-card {
+  padding: var(--space-5);
+}
+
+/* CTA banner tighter */
+.cta-banner {
+  padding: var(--space-10) 0;
+}
+
+/* Scroll progress thinner on mobile */
+.scroll-progress {
+  height: 2px;
+}
+
+/* Roadmap Scroll Indicators */
+.roadmap-scroll-indicator {
+  display: flex;
+  position: absolute;
+  top: 45px; /* Aligned with circles */
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 36px;
+  height: 36px;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  box-shadow: 0 4px 12px rgba(34, 109, 180, 0.15);
+  cursor: pointer;
+}
+
+.roadmap-scroll-indicator svg {
+  width: 20px;
+  height: 20px;
+}
+
+.roadmap-scroll-indicator.left {
+  left: -10px;
+  animation: bounceHorizontalLeft 2s infinite;
+}
+
+.roadmap-scroll-indicator.right {
+  right: -10px;
+  animation: bounceHorizontalRight 2s infinite;
+}
+
+@keyframes bounceHorizontalRight {
+  0%, 100% { transform: translate(0, -50%); }
+  50% { transform: translate(5px, -50%); }
+}
+
+@keyframes bounceHorizontalLeft {
+  0%, 100% { transform: translate(0, -50%); }
+  50% { transform: translate(-5px, -50%); }
+}
+
+}
+
 
 /* ── Tablet (768px – 1023px) ───────────────────────────────── */
 
 @media (min-width: 768px) and (max-width: 1023px) {
 
-  h1 { font-size: var(--text-3xl); }
+  h1 {
+    font-size: var(--text-3xl);
+  }
+
+  .hero {
+    min-height: 80vh;
+    padding-top: 34px;
+  }
 
   .hero h1 {
     font-size: var(--text-4xl);
@@ -485,9 +587,20 @@
     max-height: 24px;
   }
 
-  .hero-accent--1 { width: 80px; height: 80px; }
-  .hero-accent--2 { width: 50px; height: 50px; }
-  .hero-accent--3 { width: 40px; height: 40px; }
+  .hero-accent--1 {
+    width: 80px;
+    height: 80px;
+  }
+
+  .hero-accent--2 {
+    width: 50px;
+    height: 50px;
+  }
+
+  .hero-accent--3 {
+    width: 40px;
+    height: 40px;
+  }
 
   /* Navbar — show links but compress */
   .navbar-nav {
@@ -586,6 +699,7 @@
 /* ── Print ─────────────────────────────────────────────────── */
 
 @media print {
+
   .navbar,
   .navbar-toggle,
   .cta-banner,

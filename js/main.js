@@ -202,4 +202,43 @@
 
   initFaqAccordion();
 
+  // -- Roadmap Scroll Indicators ------------------------------
+  function initRoadmapScroll() {
+    const roadmapWrapper = document.querySelector('.roadmap-wrapper');
+    const scrollLeftBtn = document.querySelector('.roadmap-scroll-indicator.left');
+    const scrollRightBtn = document.querySelector('.roadmap-scroll-indicator.right');
+
+    if (roadmapWrapper && (scrollLeftBtn || scrollRightBtn)) {
+      if (scrollLeftBtn) {
+        scrollLeftBtn.addEventListener('click', function () {
+          roadmapWrapper.scrollBy({ left: -250, behavior: 'smooth' });
+        });
+      }
+      if (scrollRightBtn) {
+        scrollRightBtn.addEventListener('click', function () {
+          roadmapWrapper.scrollBy({ left: 250, behavior: 'smooth' });
+        });
+      }
+
+      // Hide arrows if reached start or end
+      const updateArrows = () => {
+        if (scrollLeftBtn) {
+          scrollLeftBtn.style.opacity = roadmapWrapper.scrollLeft > 10 ? '1' : '0.2';
+          scrollLeftBtn.style.pointerEvents = roadmapWrapper.scrollLeft > 10 ? 'auto' : 'none';
+        }
+        if (scrollRightBtn) {
+          const maxScroll = roadmapWrapper.scrollWidth - roadmapWrapper.clientWidth;
+          scrollRightBtn.style.opacity = roadmapWrapper.scrollLeft < maxScroll - 10 ? '1' : '0.2';
+          scrollRightBtn.style.pointerEvents = roadmapWrapper.scrollLeft < maxScroll - 10 ? 'auto' : 'none';
+        }
+      };
+
+      roadmapWrapper.addEventListener('scroll', updateArrows, { passive: true });
+      window.addEventListener('resize', updateArrows, { passive: true });
+      setTimeout(updateArrows, 150);
+    }
+  }
+
+  initRoadmapScroll();
+
 })();
