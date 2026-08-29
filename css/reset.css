@@ -40,6 +40,8 @@ body {
   background-color: var(--color-white);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-wrap: break-word; /* Prevent long text from breaking layout */
+  word-wrap: break-word;
   text-rendering: optimizeLegibility;
 }
 
