@@ -1,0 +1,36 @@
+# Zudo Works
+
+Zudo Works is an AI-focused Zoho Authorized Partner and IT Solutions Provider specializing in custom software development, Zoho ecosystem implementation, API integrations, and digital transformation.
+
+## Core Navigation
+- [Services](services.html) - Custom software engineering, Zoho partner services, system integrations, and business digital transformation.
+- [Zoho Partner](zoho-partner.html) - Zoho CRM implementation, Zoho Books customization, custom Creator apps, migration, automation, and ongoing support.
+- [Integrations](integrations.html) - Deluge script middleware, Zoho Flow, and custom API connections between CRM/Books and third-party tools.
+- [Solutions](solutions.html) - Solution templates organized by operational challenges (CRM, Billing, Sales, Support, HR, Inventory, custom portals).
+- [Portfolio](portfolio.html) - Interactive filterable case studies of CRM transformations, finance automation, and custom solutions.
+- [Blog](blog.html) - Technical implementation guides, integration best practices, and operations automation insights.
+- [Free Guide: The Website Lead System](guide.html) - 5-step conversion optimization framework and audit checklist to turn brochure websites into active customer engines.
+- [Company Details](company.html) - Our methodology, core team expertise, target industries, and career openings.
+- [Contact](contact.html) - Discovery booking form, physical office location, and business contact coordinates.
+
+## Key Services
+1. **Custom Software Development**: Enterprise web applications, APIs, SaaS architectures, database tuning.
+2. **Zoho Implementation & Customization**: Zoho CRM blueprints, Zoho Books billing, Creator custom apps, Deluge coding.
+3. **API & System Integration**: Middlewares, Zoho Flow, webhooks, connecting payment systems, ERPs, and marketing tools.
+4. **Operations Automation**: End-to-end workflow triggers, cross-app data synchronization, report automation.
+
+## Official Credentials
+- **Entity Type**: Private Limited Company (Indian Registered Company)
+- **CIN**: [UXXXXXXXXXXXXX]
+- **Emails**: 
+  - `contact@zudoworks.com` (Formal contact & sales)
+  - `support@zudoworks.com` (Technical support)
+  - `info@zudoworks.com` (General info & blog queries)
+- **Phone**: +91 63854 35382
+- **Registered Office Address**: Flat no.2, Plot no.1051, I- block, 35th street, 18th main road, Anna Nagar, Chennai, India, 600100
+- **LinkedIn**: https://linkedin.com/company/zudoworks
+- **Twitter/X**: https://x.com/zudoworks
+- **Instagram**: https://www.instagram.com/zudoworks/
+- **Facebook**: https://www.facebook.com/zudoworks
+- **Reddit**: https://www.reddit.com/user/zudoworks/
+- **YouTube**: https://www.youtube.com/channel/UC-HOpl5L1q6V881gCmeZdng

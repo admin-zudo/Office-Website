@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://zudoworks.com/sitemap.xml
